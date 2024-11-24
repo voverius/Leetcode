@@ -82,10 +82,10 @@ if __name__ == "__main__":
     ]
 
     for case in cases:
-        for solution in [Solution1, Solution2]:
+        for idx, solution in enumerate([Solution1, Solution2]):
             output = solution(nums=deepcopy(case[0]))
             if output != case[1]:
-                print(f'Failed   Solution {solution}')
+                print(f'Failed   Solution {idx + 1}')
                 print(case[0])
 
     print('-' * 150)

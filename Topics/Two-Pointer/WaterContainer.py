@@ -32,6 +32,7 @@ n == height.length
 0 <= height[i] <= 10^4
 """
 
+
 def Solution1(height):
     left = 0
     right = len(height) - 1
@@ -58,10 +59,10 @@ if __name__ == "__main__":
     ]
 
     for case in cases:
-        for solution in [Solution1]:
+        for idx, solution in enumerate([Solution1]):
             output = solution(height=deepcopy(case[0]))
             if output != case[1]:
-                print(f'Failed   Solution {solution}')
+                print(f'Failed   Solution {idx + 1}')
                 print(case[0])
 
     print('-' * 150)
