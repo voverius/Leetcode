@@ -3,10 +3,11 @@ from Tools.PrintPointers import *
 
 
 """
-MEDIUM
+Sort Colors - MEDIUM
 
 https://leetcode.com/problems/sort-colors
 https://www.hellointerview.com/learn/code/two-pointers/sort-colors
+
 
 Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects
 of the same color are adjacent, with the colors in the order red, white, and blue.
@@ -30,7 +31,7 @@ nums[i] is either 0, 1, or 2.
 """
 
 
-def SortColors1(nums):
+def Solution1(nums):
     """This is a hash table solution"""
     if len(nums) == 1:
         return nums
@@ -51,7 +52,7 @@ def SortColors1(nums):
     return nums
 
 
-def SortColors2(nums):
+def Solution2(nums):
     """This is a 2 pointer solution"""
     left, right = 0, len(nums) - 1
     i = 0
@@ -81,15 +82,11 @@ if __name__ == "__main__":
     ]
 
     for case in cases:
-        output = SortColors1(nums=deepcopy(case[0]))
-        if output != case[1]:
-            print('Failed: ')
-            print(case[0])
-
-        output = SortColors2(nums=deepcopy(case[0]))
-        if output != case[1]:
-            print('Failed: ')
-            print(case[0])
+        for solution in [Solution1, Solution2]:
+            output = solution(nums=deepcopy(case[0]))
+            if output != case[1]:
+                print(f'Failed   Solution {solution}')
+                print(case[0])
 
     print('-' * 150)
     print('Passed all test cases')
