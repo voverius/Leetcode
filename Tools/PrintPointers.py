@@ -27,12 +27,11 @@ def PrintPointers(nums, L=None, R=None, i=None):
 
     print(array)
     print(''.join(pointer))
+    print('-' * len(pointer))
     return
 
 
 if __name__ == "__main__":
     PrintPointers(nums=deepcopy([2, 10, 3, 123, 45]), L=1, R=-2, i=2)
-    print('-' * 30)
     PrintPointers(nums=[0, 0, 0, 0, 0], L=0, R=0, i=0)
-    print('-' * 30)
     PrintPointers(nums=deepcopy([2, 10, 3, 123, 45, 1450]), L=-1, R=1, i=3)
