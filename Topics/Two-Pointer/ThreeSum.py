@@ -2,7 +2,7 @@
 from Tools.PrintPointers import *
 
 """
-Three Sum - Medium
+Three Sum - MEDIUM
 
 https://leetcode.com/problems/3sum
 https://www.hellointerview.com/learn/code/two-pointers/3-sum
