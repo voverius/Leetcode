@@ -3,7 +3,7 @@ from Tools.PrintPointers import *
 
 
 """
-Longest Repeating Character Replacement
+Longest Repeating Character Replacement - MEDIUM
 
 https://leetcode.com/problems/longest-repeating-character-replacement/description/
 https://www.hellointerview.com/learn/code/sliding-window/longest-repeating-character-replacement
