@@ -9,6 +9,12 @@ def PrintPointers(nums, L=None, R=None, i=None):
     array = '   '.join([str(num) for num in nums])
     pointer = [' '] * len(array)
 
+    if L >= len(nums) or R >= len(nums) or i >= len(nums):
+        print(array)
+        print('INVALID POINTERS')
+        print('-' * len(pointer))
+        return
+
     current = 0
     positions = []
     for num in nums:
@@ -19,11 +25,13 @@ def PrintPointers(nums, L=None, R=None, i=None):
         pointer[positions[L]] = 'L'
     if R is not None:
         position = positions[R] if L != R else positions[R] + 1
+        pointer = pointer + [' '] if position == len(pointer) else pointer
         pointer[position] = 'R'
     if i is not None:
         position = positions[i] if i != L else positions[i] + 1
         position = position if i != R else position + 1
-        pointer[position] = 'i'
+        pointer = pointer + [' '] if position == len(pointer) else pointer
+        pointer[position] = '^'
 
     print(array)
     print(''.join(pointer))

@@ -79,7 +79,6 @@ def Solution2(nums, k):
         left = right - k
         rolling += nums[right] - nums[left]
         seen[nums[right]] = right
-        PrintPointers(nums, left, right)
 
         if seen[nums[left]] == left:
             del seen[nums[left]]
