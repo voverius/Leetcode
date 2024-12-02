@@ -9,7 +9,9 @@ def PrintPointers(nums, L=None, R=None, i=None):
     array = '   '.join([str(num) for num in nums])
     pointer = [' '] * len(array)
 
-    if L >= len(nums) or R >= len(nums) or i >= len(nums):
+    if L is not None and L >= len(nums) or \
+            R is not None and R >= len(nums) or \
+            i is not None and i >= len(nums):
         print(array)
         print('INVALID POINTERS')
         print('-' * len(pointer))
